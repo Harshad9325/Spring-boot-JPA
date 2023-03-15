@@ -1,10 +1,12 @@
 package com.api.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class book {
@@ -13,7 +15,10 @@ public class book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Book_id")
 	private int id;
+
 	private String title;
+
+	@OneToOne(cascade = CascadeType.ALL)
 	private Author author;
 
 	public int getId() {

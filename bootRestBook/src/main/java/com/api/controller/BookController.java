@@ -32,7 +32,7 @@ public class BookController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(list);
 	}
 
-// get book by id handler
+// get the book by id handler
 	@GetMapping("/books/{id}")
 	public ResponseEntity<book> getBook(@PathVariable("id") int id) {
 		book book = bookService.getBookById(id);

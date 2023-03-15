@@ -3,6 +3,8 @@ package com.api.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +12,7 @@ import com.api.Dao.bookRepo;
 import com.api.model.book;
 
 @Component
+
 public class bookService {
 
 	@Autowired
@@ -36,7 +39,7 @@ public class bookService {
 		book book = null;
 		try {
 			// book = list.stream().filter(e -> e.getId() == id).findFirst().get();
-		 this.bookRepo.findById(id);
+	book= this.bookRepo.findById(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
